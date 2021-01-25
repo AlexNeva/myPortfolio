@@ -1,0 +1,37 @@
+.about {
+  background: linear-gradient(315deg,rgb(16, 228, 234),  rgb(255, 0, 248));
+  // .about__container
+
+  &__container {
+  }
+
+  // .about__title
+
+  &__title {
+  }
+
+  &__box {
+    @include adaptiv-font(18, 16);
+    padding: 2em 2em;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1.2em;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+  }
+  
+  // .about__descr
+
+  &__descr {
+  }
+
+  // .about__list
+
+  &__list {
+  }
+
+  // .about__item
+
+  &__item {
+  }
+}
+
