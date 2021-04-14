@@ -15,15 +15,15 @@
           box-sizing: border-box;
 }
 
-:focus,
-:active {
-  outline: none;
-}
+// :focus,
+// :active {
+//   outline: none;
+// }
 
-a:focus,
-a:active {
-  outline: none;
-}
+// a:focus,
+// a:active {
+//   outline: none;
+// }
 
 nav,
 footer,
@@ -34,7 +34,7 @@ aside {
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
   font-size: 100%;
   line-height: 1;

@@ -40,6 +40,8 @@ let { src, dest } = require('gulp'),
   rename = require("gulp-rename"),
   uglify = require("gulp-uglify-es").default,
   imagemin = require("gulp-imagemin"),
+  webp = require('gulp-webp'),
+  webpcss = require("gulp-webpcss"),
   svgSprite = require('gulp-svg-sprite'),
   ttf2woff = require('gulp-ttf2woff'),
   ttf2woff2 = require('gulp-ttf2woff2'),
@@ -78,6 +80,9 @@ function css() {
         cascade: true
       })
     )
+    .pipe(webpcss(
+      { webpClass: '.webp', noWebpClass: '.no-webp' }
+    ))
     .pipe(dest(path.build.css))
     .pipe(clean_css())
     .pipe(
@@ -107,6 +112,11 @@ function js() {
 
 function images() {
   return src(path.src.img)
+    .pipe(
+      webp({
+        quality: 70
+      })
+    )
     .pipe(dest(path.build.img))
     .pipe(src(path.src.img))
     .pipe(
@@ -114,7 +124,7 @@ function images() {
         progressive: true,
         svgoPlugins: [{ removeViewBox: false }],
         interlaced: true,
-        optimizationLevel: 1 // 0 to 7
+        optimizationLevel: 3 // 0 to 7
       })
     )
     .pipe(dest(path.build.img))

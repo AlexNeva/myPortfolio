@@ -4,11 +4,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   font-weight: 600;
   color: $white-text-color;
   box-shadow: 0 0 25px #fff;
+  transition: background-color 0.2s linear 0s;
 
   // .header__container
 
@@ -16,20 +17,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    @include adaptiv-font(30, 18);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    
   }
 
   // .header__logo
 
   &__logo {
-    
+    font-size: 1.5rem;
   }
 
   // .header__nav
 
   &__nav {
+    position: relative;
   }
 
   // .header__list
@@ -42,7 +44,7 @@
   // .header__item
 
   &__item {
-    @include adaptiv-font(18, 16);
+    
     display: flex;
     align-items: center;
     margin-right: 1.5em;
@@ -56,5 +58,35 @@
   &__link {
     color: $white-text-color;
   }
+  &.colored {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .animation {
+    animation: animationLine 0.5s ease-in-out forwards;
+  }
 }
 
+.nav__line {
+  position: absolute;
+  bottom: -15px;
+  
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  transition-property: width, left;
+  transition-duration: 0.5s;
+  transition-timing-function: linear;
+}
+
+
+
+@keyframes animationLine {
+  50% {
+    bottom: -30px;
+  }
+
+  100% {
+    bottom: -15px;
+  }
+}

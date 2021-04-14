@@ -23,6 +23,9 @@
     "gulp-svg-sprite": "^1.5.0",
     "gulp-ttf2woff": "^1.1.1",
     "gulp-ttf2woff2": "^3.0.0",
-    "gulp-uglify-es": "^2.0.0"
+    "gulp-uglify-es": "^2.0.0",
+    "gulp-webp": "^4.0.1",
+    "gulp-webpcss": "^1.1.1",
+    "webp-converter": "^2.2.3"
   }
 }

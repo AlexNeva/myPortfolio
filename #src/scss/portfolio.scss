@@ -1,5 +1,5 @@
 .portfolio {
-
+  
   // .portfolio__container
 
   &__container {
@@ -8,6 +8,7 @@
   // .portfolio__title
 
   &__title {
+    
   }
 
   // .portfolio__cards
@@ -22,10 +23,54 @@
 
   &__card {
   }
+
+  &__footer {
+    margin-top: 60px;
+    text-align: center;
+  }
+  &__link {
+    display: inline-block;
+    position: relative;
+    @include adaptiv-font(16, 14);
+    padding: 1em 2em;
+    letter-spacing: 0.1em;
+    border-radius: 1em;
+    text-align: center;
+    font-weight: 600;
+    background-color: #000;
+    color: $white-text-color;
+    transition: all 0.3s ease-in-out 0s;
+    box-shadow: 0.125em 0.125em red,
+                0.25em 0.25em red;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(100%);
+      background: url('../img/portfolio/right-arrow.svg') center no-repeat;
+      width: 3em;
+      height: 2em;
+      transition: all 0.3s ease-in-out 0s;
+    }
+    &:hover {
+      padding-right: 4em;
+      box-shadow: unset;
+      transform: translateY(0.3125em);
+      letter-spacing: 0.2em;
+      &::after {
+        transform: translateY(-50%);
+      }
+    }
+  }
 }
 
 .card-portfolio {
-
+  position: relative;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease-in-out 0s;
   // .card-portfolio__image
 
   &__image {
@@ -41,33 +86,90 @@
     }
   }
 
+  &__title {
+    @include adaptiv-font(18, 16);
+    padding: 0.5em 1em;
+  }
+
   // .card-portfolio__hover-block
 
   &__hover-block {
   }
+
+  &:hover {
+    box-shadow: none;
+    .hover-block {
+      opacity: 1;
+    }
+  }
 }
 .hover-block {
-
-  // .hover-block__text
-
-  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     font-weight: 600;
     padding: 20px 10px 20px 10px;
-  }
-
-  // .hover-block__title
-
-  &__title {
-  }
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    transition: opacity 0.3s ease-in-out 0s;
+    @include adaptiv-font(16, 14);
 
   // .hover-block__decsr
 
   &__decsr {
-    @include adaptiv-font(16, 14);
+    
+    line-height: 180%;
   }
 
   // .hover-block__link
 
   &__link {
+    position: relative;
+    background: linear-gradient(45deg, #0eb5f7, #c7187e);
+    color: $white-text-color;
+    padding: 1em 2em;
+    letter-spacing: 0.1em;
+    border-radius: 1em;
+    text-align: center;
+    width: 80%;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #0eb5f7, #c7187e);
+      border-radius: 1em;
+      filter: blur(10px);
+      transition: opacity 0.3s ease-in-out 0s;
+    }
+    &:hover {
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.filter {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  &__item {
+    @include adaptiv-font(18, 16);
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-right: 2em;
+    }
   }
 }

@@ -1,9 +1,15 @@
+:root {
+  font-size: calc(0.5vw + 0.8em);
+}
+
 body {
-  font-family: OpenSans;
-  font-size: 14;
+  font-family: OpenSans, sans-serif;
+  font-size: 14px;
   font-weight: 400;
   color: $main-text-color;
   line-height: 1.3;
+  // line-height: 1;
+  font-size: 1rem;
 }
 
 .visually-hidden {
@@ -23,12 +29,11 @@ h1, h2, h3 {
 
 h2 {
   color: $title-text-color;
-  @include adaptiv-font(32, 18);
   text-align: center;
   padding: 5em 0 3em;
 }
 h3 {
-  @include adaptiv-font(21, 18);
+
 }
 
 .wrapper {
@@ -36,8 +41,8 @@ h3 {
   margin: 0 auto;
   overflow: hidden;
 }
-._container {
-  max-width: 90vw;
+.container {
+  max-width: 90%;
   // padding-left: 50px;
   // padding-right: 50px;
   margin: 0 auto;
@@ -77,4 +82,12 @@ h3 {
     top: 0;
     left: 0;
   }
+}
+
+.hide {
+  display: none;
+}
+
+button {
+  background-color: transparent;
 }
