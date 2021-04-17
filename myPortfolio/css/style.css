@@ -1053,6 +1053,7 @@ button.swiper-pagination-bullet {
 
 .hero {
   position: relative;
+  overflow: hidden;
   min-height: 100vh;
   padding-top: 10rem;
   padding-bottom: 5rem;
@@ -1126,15 +1127,15 @@ button.swiper-pagination-bullet {
           animation: titleWordChange3 12s ease-out infinite;
 }
 
-.hero__imgbox {
+.hero__image {
   z-index: 20;
   position: absolute;
   bottom: 0;
-  right: 0;
+  right: 5%;
   height: 58%;
 }
 
-.hero__imgbox img {
+.hero__image img {
   height: 100%;
 }
 
@@ -1233,6 +1234,15 @@ button.swiper-pagination-bullet {
   background-color: #03e9f4;
   -webkit-box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
           box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+}
+
+.image-hero__bg {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @-webkit-keyframes heroBgChange {
@@ -1701,14 +1711,15 @@ button.swiper-pagination-bullet {
     font-size: 2rem;
   }
 
-  .hero__imgbox {
+  .hero__image {
     position: relative;
     height: unset;
     max-width: 600px;
     margin-left: auto;
+    right: unset;
   }
 
-  .hero__imgbox img {
+  .hero__image img {
     display: block;
     height: unset;
     max-width: 100%;
