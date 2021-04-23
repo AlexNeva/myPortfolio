@@ -1,15 +1,17 @@
 :root {
-  font-size: calc(0.5vw + 0.8em);
+  // font-size: calc(0.5vw + 0.8em);
+  font-size: calc(1vw + 0.6em);
 }
 
 body {
   font-family: OpenSans, sans-serif;
-  font-size: 14px;
+  
   font-weight: 400;
   color: $main-text-color;
   line-height: 1.3;
   // line-height: 1;
-  font-size: 1rem;
+  font-size: $main-fz;
+  background-color: #F1E9EA;
 }
 
 .visually-hidden {
@@ -29,11 +31,11 @@ h1, h2, h3 {
 
 h2 {
   color: $title-text-color;
+  font-size: $h2-fz;
   text-align: center;
-  padding: 5em 0 3em;
 }
 h3 {
-
+  color: $title-text-color;
 }
 
 .wrapper {
@@ -43,21 +45,7 @@ h3 {
 }
 .container {
   max-width: 90%;
-  // padding-left: 50px;
-  // padding-right: 50px;
   margin: 0 auto;
-  // @media (max-width: 992px) {
-  //   padding-left: 30px;
-  // padding-right: 30px;
-  // }
-  // @media (max-width: 768px) {
-  //   padding-left: 20px;
-  //   padding-right: 20px;
-  // }
-  // @media (max-width: 576px) {
-  //   padding-left: 10px;
-  //   padding-right: 10px;
-  // }
 }
 .descr {
   @include adaptiv-font(18, 16);
@@ -91,3 +79,17 @@ h3 {
 button {
   background-color: transparent;
 }
+
+.swiper-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+}
+

@@ -17,8 +17,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     
   }
 
@@ -44,7 +44,7 @@
   // .header__item
 
   &__item {
-    
+    font-size: $menu-fz;
     display: flex;
     align-items: center;
     margin-right: 1.5em;

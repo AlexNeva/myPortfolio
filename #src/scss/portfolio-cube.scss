@@ -1,0 +1,153 @@
+.portfolio-cube {
+  // background-color: #F1E9EA;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  // .portfolio-cube__container
+
+  &__container {
+  }
+
+  // .portfolio-cube__title
+
+  &__title {
+    margin-bottom: 1em;
+  }
+
+  // .portfolio-cube__content
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // .portfolio-cube__descr
+
+  &__descr {
+    flex: 1 1 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      max-width: 35em;
+    }
+  }
+
+  // .portfolio-cube__swiper
+
+  &__swiper {
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  &__item {
+    opacity: 0;
+    display: none;
+    &--active {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  &__btns {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &-prev {
+    width: 50px;
+    height: 50px;
+  }
+
+  &-next {
+    width: 50px;
+    height: 50px;
+  }
+
+  &__link {
+    position: relative;
+    font-weight: 600;
+    color: inherit;
+    display: inline-block;
+    margin-top: 3em;
+    font-size: $btn-fz;
+    border: 2px solid #000;
+    padding: 1em 2em;
+    transition: transform 0.3s ease-out 0s;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -25px;
+      width: 100%;
+      height: 10%;
+      background: #000;
+      opacity: 0.5;
+      border-radius: 50%;
+      filter: blur(5px);
+      transition: transform 0.3s ease-out 0s;
+    }
+
+    &:hover {
+      transform: translateY(10px);
+      &::after {
+        transform: translateY(-8px) scaleX(1.2);
+      }
+    }
+  }
+}
+
+
+
+
+.portfolio-cube__swiper {
+  position: relative;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  max-width: 50%;
+  min-width: 500px;
+  margin-right: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+
+  .swiper-slide {
+    
+    padding-bottom: 90%;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+}
+
+.swiper-pagination-bullet-active {
+  width: 16px;
+  height: 16px;
+}
